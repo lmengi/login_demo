@@ -30,11 +30,11 @@ int CUser::Login(string strLoginJson, string& strOutJson)
 			JsonUtf8StringAssign(strPassword, root["password"]);
 			JsonUtf8StringAssign(strCoverageName, root["coveragename"]);
 			
-			string strSQL = "select * from NDUser,NDCoverage WHERE username='";
+			string strSQL = "select * from User,Coverage WHERE username='";
 			strSQL += strUserName;
 			strSQL += "' AND password='";
 			strSQL += strPassword;
-			strSQL += "' And NDUser.coverageid = NDCoverage.coverageid And NDCoverage.coveragename ='";
+			strSQL += "' And User.coverageid = Coverage.coverageid And Coverage.coveragename ='";
 			strSQL += strCoverageName;
 			strSQL += "'";
 
@@ -68,9 +68,9 @@ int CUser::GetUserProfile(string strUserId, string& strOutJson)
 
 	if(!strUserId.empty())
 	{
-		string strSQL = "select NDUser.id, NDUser.username, NDUserProfile.nickname, NDCoverage.coverageid, NDCoverage.coveragename from NDUser, NDUserProfile, NDCoverage where NDUser.id = ";
+		string strSQL = "select User.id, User.username, UserProfile.nickname, Coverage.coverageid, Coverage.coveragename from User, UserProfile, Coverage where User.id = ";
 		strSQL += strUserId;
-		strSQL += " and NDUser.coverageid = NDCoverage.coverageid and NDUser.id = NDUserProfile.userid";
+		strSQL += " and User.coverageid = Coverage.coverageid and User.id = NDUserProfile.userid";
 
 		bool bRet = CDataBaseOperateion::GetInstance()->DataBaseFind(strSQL, strOutJson);
 		if(!bRet)
