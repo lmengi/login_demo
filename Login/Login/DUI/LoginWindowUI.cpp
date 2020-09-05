@@ -46,7 +46,7 @@ void CLoginWindowUI::InitWindow()
 	m_pLoginTipLayout = static_cast<CVerticalLayoutUI *>(m_PaintManager.FindControl(_T("loginTipLayout")));
 
 	if (m_userNameEdit)
-		m_userNameEdit->SetText(_T("508816"));
+		m_userNameEdit->SetText(_T("login"));
 	
 	if (m_passWordEdit)
 		m_passWordEdit->SetText(_T("123456"));
@@ -56,7 +56,7 @@ void CLoginWindowUI::InitWindow()
 
 void CLoginWindowUI::ShowUI()
 {
-	Create(NULL,_T("网龙99游"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
+	Create(NULL,_T("登陆DEMO"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
 	CenterWindow();
 	ShowWindow();
 }
@@ -108,7 +108,7 @@ void CLoginWindowUI::OnBtnLoginClick(TNotifyUI& msg)
 	}
 	else
 	{
-		root["coveragename"] = _T("nd");
+		root["coveragename"] = _T("lmeng");
 		root["username"] = Json::Value(strUserName.c_str());
 	}
 
