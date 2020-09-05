@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 窗口的初始尺寸(宽800，高600) -->
+<Window size="800,600" caption="0,0,0,600">
+
+	<!-- 字体 -->
+	<Font id="120000" name="微软雅黑" size="14" shared="true" bold="false"></Font>
+	
+    <VerticalLayout bkcolor="#FF3795F3" bkcolor2="#FFFFFFFF" bordercolor="FF000000" bordersize="1"> <!-- 整个窗口的背景色 -->
+	
+        <!-- 标题栏区 -->
+        <HorizontalLayout height="32">
+            <Control width="12"/>
+			<Label name="title" text="我的资料" font="120000" autosize="true" textcolor="#FFFFFFFF"/>
+	   
+			<Control />
+		
+			<Button name="minbtn"   tooltip="最小化" height="19" width="23" normalimage=" file='LoginWindow\MinNormal.bmp' " hotimage=" file='LoginWindow\MinFocus.bmp' " pushedimage=" file='LoginWindow\MinFocus.bmp' "/>
+			<Button name="closebtn" tooltip="关闭" width="28" height="19" normalimage=" file='LoginWindow\CloseNormal.bmp' " hotimage=" file='LoginWindow\CloseFocus.bmp' " pushedimage=" file='LoginWindow\CloseFocus.bmp' "/>    
+        </HorizontalLayout>
+        
+		<Control height="50"/>
+		
+        <!-- 客户区 -->
+        <VerticalLayout>
+			<HorizontalLayout>
+				<Control width="20"/>
+				<VerticalLayout>
+					<Label text="用户编号" font="120000" autosize="true" textcolor="#FFFFFFFF"/>
+					<Edit name="UserNumber" width="245" height="40" font="120000" bkimage="file='LoginWindow\\edit_rename_bk.png' corner='10,3,10,3'"/>
+					
+					<Control height="10"/>
+			
+					<Label text="用户名" font="120000" autosize="true" textcolor="#FFFFFFFF"/>
+					<Edit name="UserName" width="245" height="40"  font="120000" bkimage="file='LoginWindow\\edit_rename_bk.png' corner='10,3,10,3'"/>
+					
+					<Control height="10"/>
+			
+					<Label text="昵称" font="120000" autosize="true" textcolor="#FFFFFFFF"/>
+					<Edit name="Nickname" width="245" height="40" font="120000" bkimage="file='LoginWindow\\edit_rename_bk.png' corner='10,3,10,3'"/>
+					
+					<Control height="10"/>
+						
+					<Label text="组织id" font="120000" autosize="true" textcolor="#FFFFFFFF"/>
+					<Edit name="OrganizationID" width="245" height="40" font="120000" bkimage="file='LoginWindow\\edit_rename_bk.png' corner='10,3,10,3'"/>
+					
+					<Control height="10"/>
+						
+					<Label text="组织名" font="120000" autosize="true" textcolor="#FFFFFFFF"/>
+					<Edit name="OrganizationName" width="245" height="40" font="120000" bkimage="file='LoginWindow\\edit_rename_bk.png' corner='10,3,10,3'"/>
+				</VerticalLayout>
+			</HorizontalLayout>
+		</VerticalLayout>
+		
+    </VerticalLayout>
+</Window>
+        
